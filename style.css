@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f6fa;
+    font-family: 'Rajdhani', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 20px;
+    max-width: 100%;
+    width: 500px;
+}
+
+.progress {
+    background-color: peru;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: 0.3S ease;
+}
+
+.progress-container::before {
+    content: '';
+    background-color: rgb(230, 227, 223);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.circle {
+    background-color: #fff;
+    color: rgb(27, 199, 199); 
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgb(230, 227, 223);
+    transition: .3s ease;
+}
+
+.circle.active {
+    border-color: peru;
+}
+
+.btn {
+    background-color: peru;
+    color: rgb(31, 30, 28);
+    border: 0;
+    padding: 10px 40px;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    border-radius: 25px;
+    margin: 10px;
+    font-size: 15px;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:disabled {
+    background-color:rgb(230, 227, 223);
+    cursor: not-allowed;
+}
